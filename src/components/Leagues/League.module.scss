@@ -1,0 +1,27 @@
+.wrapper {
+    width: 100%;
+}
+
+.league-info {
+    width: 100%;
+    height: 110px;
+    justify-content: space-evenly;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+
+    &:hover {
+        background-color: rgba(22, 24, 35, 0.03);
+    }
+
+    &:active {
+        border-right-color: 1px solid #333;
+    }
+}
+
+.league-logo {
+    width: 100px;
+}
+

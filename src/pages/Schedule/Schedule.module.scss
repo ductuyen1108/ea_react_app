@@ -1,0 +1,119 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.content {
+    text-align: center;
+}
+
+.title {
+    font-size: 4rem;
+    font-weight: 600;
+    color: #37003c;
+    margin: 2rem 0;
+}
+
+.container {
+    width: 950px;
+}
+
+.date {
+    text-align: start;
+    margin-bottom: 0.8rem;
+}
+
+.date-long {
+    font-weight: 650;
+    font-size: 2rem;
+    line-height: 3rem;
+    letter-spacing: -0.04rem;
+    color: #37003c;
+}
+
+.match {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 3.2rem;
+    border-bottom: 0.1rem solid #f5f2f5;
+
+    &:hover {
+        * {
+            color: #fff;
+        }
+        background: linear-gradient(98.5deg, #05f0ff -46.16%, #7367ff 42.64%, #963cff 70.3%);
+    }
+}
+
+.matches-list {
+    width: 850px;
+    display: flex;
+    color: #37003c;
+    text-decoration: none;
+    align-items: center;
+}
+
+.teams {
+    display: flex;
+    padding: 1.05rem 0;
+    align-items: center;
+    //position: relative;
+    color: #37003c;
+    width: 500px;
+    cursor: pointer;
+}
+
+.left-team {
+    width: 180px;
+    display: flex;
+    justify-content: flex-end;
+    text-align: right;
+    padding-left: 0;
+    padding-right: 1.8rem;
+}
+
+.name-team {
+    font-weight: 600;
+    color: #37003c;
+    font-size: 1.6rem;
+    line-height: 3.2rem;
+    letter-spacing: -0.04rem;
+    padding-right: 1.6rem;
+    padding-left: 1.6rem;
+}
+
+.logo-team {
+    width: 3.2rem;
+    height: 3.2rem;
+}
+
+.time-start {
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.4rem;
+
+    background: transparent;
+    font-size: 1.6rem;
+    width: 5.2rem;
+    border: 0.1rem solid #ebe5eb;
+}
+
+.right-team {
+    display: flex;
+    text-align: left;
+    padding-right: 0;
+    padding-left: 1.8rem;
+}
+
+.stadium {
+    flex: 1;
+    display: flex;
+    //justify-content: space-between;
+}
+.stadium-logo {
+    margin-right: 10px;
+}

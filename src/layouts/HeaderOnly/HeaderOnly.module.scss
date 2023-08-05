@@ -1,0 +1,20 @@
+.wrapper {
+    
+}
+
+.header {
+    height: var(--default-layout-header-height);
+    width: 100%;
+    box-shadow: 0px 1px 1px rgb(0 0 0 / 12%);
+    background-color: white;
+    position: fixed;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+}
+.actions {
+    width: 405px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

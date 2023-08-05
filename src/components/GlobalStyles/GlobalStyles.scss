@@ -1,0 +1,100 @@
+@import 'normalize.css';
+
+:root {
+    --primary: orangered;
+    --white: white;
+    --black: #000;
+    --text-color: #333;
+
+    //default layout
+    --default-layout-header-height: 60px;
+    --default-layout-width: 100%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    height: 100%;
+}
+
+@font-face {
+    font-family: ProximaNova;
+    src: url('/assets/fonts/ProximaNovaT-Thin.woff');
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: ProximaNova;
+    src: url('/assets/fonts/ProximaNova-Bold.woff');
+    font-weight: 700;
+}
+@font-face {
+    font-family: ProximaNova;
+    src: url('/assets/fonts/ProximaNova-Regular.woff');
+    font-weight: 400;
+}
+@font-face {
+    font-family: ProximaNova;
+    src: url('/assets/fonts/ProximaNova-Semibold.woff');
+    font-weight: 600;
+}
+
+html *::-webkit-scrollbar {
+    border-radius: 0;
+    width: 8px;
+}
+
+html *::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(22, 24, 35, 0.06);
+}
+
+html *::-webkit-scrollbar-track {
+    border-radius: 0;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+body {
+    font-family: 'ProximaNova', sans-serif;
+    font-size: 1.6rem;
+    text-rendering: optimizeSpeed;
+    color: var(--text-color);
+    height: 100%;
+}
+
+button,
+input,
+[tabindex] {
+    border: none;
+    outline: none;
+}
+
+a[href] {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+// Custom tippy
+body {
+    .tippy-box {
+        font-size: 1.6rem;
+        font-weight: 600;
+        line-height: 2.2rem;
+        border-radius: 8px;
+        border-color: rgba(84, 84, 84, 0.92);
+    }
+    .tippy-arrow {
+        color: rgba(84, 84, 84, 0.92);
+    }
+    .tippy-content {
+        padding: 8px 9px;
+    }
+    .tippy-box[data-placement^='bottom'] > .tippy-arrow:before {
+        top: -8px;
+    }
+}

@@ -1,0 +1,112 @@
+.wrapper {
+    z-index: 3;
+    width: 1490px;
+    align-items: center;
+    flex-direction: column;
+    display: flex;
+    background-color: #26272b;
+    color: white;
+
+    li,
+    p,
+    span,
+    a {
+        line-height: 2rem;
+        font-weight: 300;
+        list-style: none;
+        color: white;
+    }
+
+    li {
+        &:hover {
+            color: rgb(81, 114, 236);
+        }
+    }
+
+    h4 {
+        padding-bottom: 0.8rem;
+        font-size: 1.9rem;
+        letter-spacing: 0.2rem;
+    }
+}
+
+.inner {
+    width: 1050px;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    padding: 25px 0;
+    border-bottom: 1px solid grey;
+}
+
+.about {
+    width: 550px;
+    word-wrap: break-word;
+}
+
+.title {
+}
+
+.description {
+    text-align: justify !important;
+}
+
+.league {
+    width: 150px;
+}
+
+.title {
+}
+
+.menu {
+}
+
+.links {
+    width: 150px;
+}
+
+.title {
+}
+
+.menu {
+}
+
+.contact {
+    justify-content: space-between;
+    display: flex;
+    padding: 15px 0;
+}
+
+.copyright {
+}
+
+.follow {
+    display: flex;
+    width: 180px;
+    justify-content: space-between;
+}
+
+.socials {
+    cursor: pointer;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    background-color: #2d3436;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+
+    &:hover {
+        a[href] {
+            color: black;
+        }
+
+        background-color: #d7e3e7;
+    }
+
+    a[href] {
+        color: white;
+    }
+}
