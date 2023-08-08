@@ -24,20 +24,16 @@ function Sidebar() {
 
     return (
         <div className={cx('wrapper')}>
-            {!isFootballClubsVisible && (
-                <Leagues onLeagueClick={handleLeagueClick} />
-            )}
+            {!isFootballClubsVisible && <Leagues onLeagueClick={handleLeagueClick} />}
             {isFootballClubsVisible && (
                 <div className={cx('button')}>
                     <button className={cx('btn-back')} onClick={handleBackClick}>
-                        <FontAwesomeIcon icon={faArrowLeftLong}/>
+                        <FontAwesomeIcon icon={faArrowLeftLong} />
                         <span>Return</span>
                     </button>
                 </div>
             )}
-            {isFootballClubsVisible && (
-                <FootballClubs leagueName={selectedLeagueName} />
-            )}
+            {isFootballClubsVisible && <FootballClubs leagueName={selectedLeagueName} />}
         </div>
     );
 }

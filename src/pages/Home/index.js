@@ -18,41 +18,62 @@ const images = [
 
 function Home() {
     const [currentIndex, setCurrentIndex] = useState(0);
-    const [leagues, setLeagues] = useState([])
+    const [leagues, setLeagues] = useState([]);
 
     useEffect(() => {
         api.get('/leagues')
-            .then(response => {
+            .then((response) => {
                 setLeagues(response.data);
             })
-            .catch(error => {
-                console.log("Error: ", error)
-            })
-    }, [])
+            .catch((error) => {
+                console.log('Error: ', error);
+            });
 
-    const handleNext = () => {
-        setCurrentIndex((imageIndex) => (imageIndex + 1) % images.length);
-    };
+        const interval = setInterval(() => {
+            setCurrentIndex((imageIndex) => (imageIndex + 1) % images.length);
+        }, 4000);
 
-    const handlePrev = () => {
-        setCurrentIndex((imageIndex) => (imageIndex - 1 + images.length) % images.length);
-    };
+        return () => {
+            clearInterval(interval);
+        };
+    }, []);
 
     return (
         <div className={cx('wrapper')}>
             <div className={cx('container')}>
                 <div className={cx('slide-club')}>
-                    <button className={cx('prev-button')} onClick={handlePrev}>
+                    <button
+                        className={cx('prev-button')}
+                        onClick={() => setCurrentIndex((currentIndex - 1 + images.length) % images.length)}
+                    >
                         <FontAwesomeIcon icon={faChevronLeft} />
                     </button>
                     <div className={cx('image-slider')}>
-                        <img src={`${images[currentIndex]}`} alt="" />
+                        {images.map((image, index) => (
+                            <img
+                                key={index}
+                                src={image}
+                                alt=""
+                                className={cx('slide', {
+                                    active: currentIndex === index,
+                                    prev:
+                                        currentIndex - 1 === index ||
+                                        (currentIndex === 0 && index === images.length - 1),
+                                    next:
+                                        currentIndex + 1 === index ||
+                                        (currentIndex === images.length - 1 && index === 0),
+                                })}
+                            />
+                        ))}
                     </div>
-                    <button className={cx('next-button')} onClick={handleNext}>
+                    <button
+                        className={cx('next-button')}
+                        onClick={() => setCurrentIndex((currentIndex + 1) % images.length)}
+                    >
                         <FontAwesomeIcon icon={faChevronRight} />
                     </button>
                 </div>
-                {leagues.map(league => (
+                {leagues.map((league) => (
                     <div key={league._id} className={cx('leagues')}>
                         <div className={cx('title')}>
                             <h2>{league.lea_name}</h2>

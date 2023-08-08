@@ -12,27 +12,23 @@ function Leagues({ onLeagueClick, selectedLeagueName }) {
 
     useEffect(() => {
         api.get('/leagues')
-            .then(response => {
+            .then((response) => {
                 setLeagues(response.data);
             })
-            .catch(err => {
-                console.log("Error: ", err)
+            .catch((err) => {
+                console.log('Error: ', err);
             });
     }, []);
 
     return (
         <div className={cx('wrapper')}>
-            {leagues.map(league => (
+            {leagues.map((league) => (
                 <div
                     key={league._id}
                     className={cx('league-info', { active: league.lea_name === selectedLeagueName })}
                     onClick={() => onLeagueClick(league.lea_name)}
                 >
-                    <Image
-                        className={cx('league-logo')}
-                        src={league.logo}
-                        alt="league-logo"
-                    />
+                    <Image className={cx('league-logo')} src={league.logo} alt="league-logo" />
                 </div>
             ))}
         </div>

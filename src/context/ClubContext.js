@@ -1,4 +1,4 @@
-import React, { createContext, useState, useContext } from 'react';
+import { createContext, useState, useContext } from 'react';
 
 const ClubContext = createContext();
 
@@ -7,9 +7,7 @@ export function ClubProvider({ children }) {
     const [userRole, setUserRole] = useState(localStorage.getItem('role') || 'user');
 
     return (
-        <ClubContext.Provider value={{ nameClub, setNameClub, userRole, setUserRole }}>
-            {children}
-        </ClubContext.Provider>
+        <ClubContext.Provider value={{ nameClub, setNameClub, userRole, setUserRole }}>{children}</ClubContext.Provider>
     );
 }
 

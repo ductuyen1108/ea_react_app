@@ -15,10 +15,10 @@ function FootballClubs({ leagueName }) {
 
     useEffect(() => {
         api.get(`/clubs/leagueName/${leagueName}`)
-            .then(res => {
+            .then((res) => {
                 setFootballClubs(res.data);
             })
-            .catch(err => {
+            .catch((err) => {
                 console.log('Error:', err);
             });
     }, [leagueName]);
@@ -30,18 +30,14 @@ function FootballClubs({ leagueName }) {
 
     return (
         <div className={cx('wrapper')}>
-            {footballClubs.map(footballClub => (
+            {footballClubs.map((footballClub) => (
                 <div
-                    key={footballClub._id}                          
+                    key={footballClub._id}
                     className={cx('fc-info', { hidden: footballClub.lea_name !== leagueName })}
                     onClick={() => handleFootballClubClick(footballClub.name_club)}
                 >
                     <Link to={`/overview/${footballClub.name_club}`}>
-                        <Image
-                            className={cx('fc-logo')}
-                            src={footballClub.logo}
-                            alt={footballClub.acronym_club}
-                        />
+                        <Image className={cx('fc-logo')} src={footballClub.logo} alt={footballClub.acronym_club} />
                         <p className={cx('fc-name')}>{footballClub.name_club}</p>
                     </Link>
                 </div>

@@ -24,6 +24,7 @@ import PlayerEdit from '~/pages/Manager/PlayersManager/PlayerEdit';
 import { HeaderOnly } from '~/layouts';
 import { SidebarAdmin } from '~/layouts';
 import Sigup from '~/pages/Sigup';
+import { HeaderShop } from '~/layouts';
 
 // Public Routes
 const publicRoutes = [
@@ -33,7 +34,7 @@ const publicRoutes = [
     { path: '/news', component: News, name: 'News' },
     { path: '/standings/:nameClub', component: Standings, name: 'Standings' },
     { path: '/squad/:nameClub', component: Squad, name: 'Squad' },
-    { path: '/shop', component: Shop, name: 'Shop' },
+    { path: '/shop', component: Shop, name: 'Shop', layout: HeaderShop },
     { path: '/login', component: Login, layout: HeaderOnly },
     { path: '/register', component: Sigup, layout: HeaderOnly },
 ];

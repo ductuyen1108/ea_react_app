@@ -4,14 +4,8 @@
     align-items: center;
 }
 .container {
-    background-color: rgba(22, 24, 35, 0.03);
     flex-shrink: 0;
     display: flex;
     padding-top: 60px;
     width: 1490px;
-}
-.content {
-    flex: 1;
-    width: 1345px;
-    min-height: auto;
 }
