@@ -24,7 +24,7 @@
     font-weight: 500;
     padding: 1.4rem;
     border-radius: 4px;
-    background-color: orangered;
+    background-color: cadetblue;
     width: 25rem;
     cursor: pointer;
     display: flex;
@@ -38,8 +38,8 @@
     width: 25rem;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 4px;
-    position: absolute; 
-    top: 5rem;  
+    position: absolute;
+    top: 5rem;
     z-index: 2;
 }
 
@@ -53,7 +53,6 @@
         background-color: rgb(188, 188, 237);
     }
 }
-
 
 .infor-player {
     display: flex;
@@ -113,13 +112,13 @@
     font-weight: 600;
 }
 
-.params{
+.params {
     padding-top: 20px;
     display: flex;
     justify-content: space-between;
 }
 
-.params-item{
+.params-item {
     display: flex;
 
     span {
@@ -127,19 +126,19 @@
     }
 }
 
-.param-color-a{
+.param-color-a {
     background-color: rgb(34, 166, 153);
     width: 15px;
     height: 15px;
 }
 
-.param-color-p{
-    background-color: rgb(242, 76, 61);;
+.param-color-p {
+    background-color: rgb(242, 76, 61);
     width: 15px;
     height: 15px;
 }
 
-.param-color-d{
+.param-color-d {
     background-color: rgb(242, 190, 34);
     width: 15px;
     height: 15px;

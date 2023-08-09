@@ -1,7 +1,6 @@
 import Home from '~/pages/Home';
 import Overview from '~/pages/Overview';
 import Schedule from '~/pages/Schedule';
-import News from '~/pages/News';
 import Standings from '~/pages/Standings';
 import Squad from '~/pages/Squad';
 import Shop from '~/pages/Shop';
@@ -20,6 +19,10 @@ import ClubEdit from '~/pages/Manager/ClubsManager/ClubEdit';
 import PlayerList from '~/pages/Manager/PlayersManager/PlayerList';
 import PlayerCreate from '~/pages/Manager/PlayersManager/PlayerCreate';
 import PlayerEdit from '~/pages/Manager/PlayersManager/PlayerEdit';
+// Admin product
+import ProductList from '~/pages/Manager/ProductsManager/ProductList';
+import ProductCreate from '~/pages/Manager/ProductsManager/ProductCreate';
+import ProductEdit from '~/pages/Manager/ProductsManager/ProductEdit';
 
 import { HeaderOnly } from '~/layouts';
 import { SidebarAdmin } from '~/layouts';
@@ -31,7 +34,6 @@ const publicRoutes = [
     { path: '/', component: Home },
     { path: '/overview/:nameClub', component: Overview, name: 'Overview' },
     { path: '/schedule/:nameClub', component: Schedule, name: 'Schedule' },
-    { path: '/news', component: News, name: 'News' },
     { path: '/standings/:nameClub', component: Standings, name: 'Standings' },
     { path: '/squad/:nameClub', component: Squad, name: 'Squad' },
     { path: '/shop', component: Shop, name: 'Shop', layout: HeaderShop },
@@ -56,6 +58,11 @@ const privateRoutes = [
     { path: '/admin/players/create', component: PlayerCreate, layout: SidebarAdmin },
     { path: '/admin/players/edit/:id', component: PlayerEdit, layout: SidebarAdmin },
     { path: '/admin/players/edit', component: PlayerEdit, layout: SidebarAdmin },
+    //Admin Product routes
+    { path: '/admin/products/list', component: ProductList, layout: SidebarAdmin },
+    { path: '/admin/products/create', component: ProductCreate, layout: SidebarAdmin },
+    { path: '/admin/products/edit/:id', component: ProductEdit, layout: SidebarAdmin },
+    { path: '/admin/products/edit', component: ProductEdit, layout: SidebarAdmin },
 
     { path: '/cart', component: Cart, layout: HeaderOnly },
 ];

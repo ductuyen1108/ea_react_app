@@ -1,11 +1,11 @@
-import classNames from "classnames/bind";
-import styles from './SidebarAdmin.module.scss'
-import images from "~/assets/images";
+import classNames from 'classnames/bind';
+import styles from './SidebarAdmin.module.scss';
+import images from '~/assets/images';
 
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
-const cx = classNames.bind(styles)
+const cx = classNames.bind(styles);
 
 function SidebarAdmin({ children }) {
     const [showLeague, setShowLeague] = useState(false);
@@ -13,6 +13,7 @@ function SidebarAdmin({ children }) {
     const [showPlayer, setShowPlayer] = useState(false);
     const [showSchedule, setShowSchedule] = useState(false);
     const [showTable, setShowTable] = useState(false);
+    const [showProducts, setShowProducts] = useState(false);
 
     return (
         <div className={cx('wrapper')}>
@@ -30,8 +31,12 @@ function SidebarAdmin({ children }) {
                                 <Link onClick={() => setShowLeague(!showLeague)}>Leagues</Link>
                                 {showLeague && (
                                     <ul className={cx('dropdown')}>
-                                        <li className={cx('sub')}><Link to="/admin/leagues/list">Leagues list</Link></li>
-                                        <li className={cx('sub')}><Link to="/admin/leagues/create">Create a new League</Link></li>
+                                        <li className={cx('sub')}>
+                                            <Link to="/admin/leagues/list">Leagues list</Link>
+                                        </li>
+                                        <li className={cx('sub')}>
+                                            <Link to="/admin/leagues/create">Create a new League</Link>
+                                        </li>
                                     </ul>
                                 )}
                             </li>
@@ -39,8 +44,12 @@ function SidebarAdmin({ children }) {
                                 <Link onClick={() => setShowClub(!showClub)}>Clubs</Link>
                                 {showClub && (
                                     <ul className={cx('dropdown')}>
-                                        <li className={cx('sub')}><Link to="/admin/clubs/list">Clubs list</Link></li>
-                                        <li className={cx('sub')}><Link to="/admin/clubs/create">Create a new club</Link></li>
+                                        <li className={cx('sub')}>
+                                            <Link to="/admin/clubs/list">Clubs list</Link>
+                                        </li>
+                                        <li className={cx('sub')}>
+                                            <Link to="/admin/clubs/create">Create a new club</Link>
+                                        </li>
                                     </ul>
                                 )}
                             </li>
@@ -48,8 +57,12 @@ function SidebarAdmin({ children }) {
                                 <Link onClick={() => setShowPlayer(!showPlayer)}>Players</Link>
                                 {showPlayer && (
                                     <ul className={cx('dropdown')}>
-                                        <li className={cx('sub')}><Link to="/admin/players/list">Players list</Link></li>
-                                        <li className={cx('sub')}><Link to="/admin/players/create">Create a new player</Link></li>
+                                        <li className={cx('sub')}>
+                                            <Link to="/admin/players/list">Players list</Link>
+                                        </li>
+                                        <li className={cx('sub')}>
+                                            <Link to="/admin/players/create">Create a new player</Link>
+                                        </li>
                                     </ul>
                                 )}
                             </li>
@@ -57,17 +70,38 @@ function SidebarAdmin({ children }) {
                                 <Link onClick={() => setShowSchedule(!showSchedule)}>Schedule</Link>
                                 {showSchedule && (
                                     <ul className={cx('dropdown')}>
-                                        <li className={cx('sub')}><Link to="/admin/schedule/list">Schedule list</Link></li>
-                                        <li className={cx('sub')}><Link to="/admin/schedule/create">Create a new Shedule</Link></li>
+                                        <li className={cx('sub')}>
+                                            <Link to="/admin/schedule/list">Schedule list</Link>
+                                        </li>
+                                        <li className={cx('sub')}>
+                                            <Link to="/admin/schedule/create">Create a new Shedule</Link>
+                                        </li>
                                     </ul>
-                                )}                                    
+                                )}
                             </li>
                             <li className={cx('main')}>
                                 <Link onClick={() => setShowTable(!showTable)}>Table</Link>
                                 {showTable && (
                                     <ul className={cx('dropdown')}>
-                                        <li className={cx('sub')}><Link to="/admin/table/list">Table list</Link></li>
-                                        <li className={cx('sub')}><Link to="/admin/table/create">Create a new table</Link></li>
+                                        <li className={cx('sub')}>
+                                            <Link to="/admin/table/list">Table list</Link>
+                                        </li>
+                                        <li className={cx('sub')}>
+                                            <Link to="/admin/table/create">Create a new table</Link>
+                                        </li>
+                                    </ul>
+                                )}
+                            </li>
+                            <li className={cx('main')}>
+                                <Link onClick={() => setShowProducts(!showProducts)}>Products</Link>
+                                {showProducts && (
+                                    <ul className={cx('dropdown')}>
+                                        <li className={cx('sub')}>
+                                            <Link to="/admin/products/list">Products list</Link>
+                                        </li>
+                                        <li className={cx('sub')}>
+                                            <Link to="/admin/products/create">Create a new product</Link>
+                                        </li>
                                     </ul>
                                 )}
                             </li>
