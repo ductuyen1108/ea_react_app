@@ -23,11 +23,15 @@ import PlayerEdit from '~/pages/Manager/PlayersManager/PlayerEdit';
 import ProductList from '~/pages/Manager/ProductsManager/ProductList';
 import ProductCreate from '~/pages/Manager/ProductsManager/ProductCreate';
 import ProductEdit from '~/pages/Manager/ProductsManager/ProductEdit';
+// Admin account
+import AccountList from '~/pages/Manager/AccountsManager/AccountList';
+import AccountEdit from '~/pages/Manager/AccountsManager/AccountEdit';
 
 import { HeaderOnly } from '~/layouts';
 import { SidebarAdmin } from '~/layouts';
 import Sigup from '~/pages/Sigup';
 import { HeaderShop } from '~/layouts';
+import AccountCreate from '~/pages/Manager/AccountsManager/AccountCreate';
 
 // Public Routes
 const publicRoutes = [
@@ -63,6 +67,11 @@ const privateRoutes = [
     { path: '/admin/products/create', component: ProductCreate, layout: SidebarAdmin },
     { path: '/admin/products/edit/:id', component: ProductEdit, layout: SidebarAdmin },
     { path: '/admin/products/edit', component: ProductEdit, layout: SidebarAdmin },
+    //Admin Account routes
+    { path: '/admin/accounts/list', component: AccountList, layout: SidebarAdmin },
+    { path: '/admin/accounts/create', component: AccountCreate, layout: SidebarAdmin },
+    { path: '/admin/accounts/edit/:id', component: AccountEdit, layout: SidebarAdmin },
+    { path: '/admin/accounts/edit', component: AccountEdit, layout: SidebarAdmin },
 
     { path: '/cart', component: Cart, layout: HeaderOnly },
 ];

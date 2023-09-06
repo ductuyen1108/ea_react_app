@@ -80,14 +80,14 @@ function SidebarAdmin({ children }) {
                                 )}
                             </li>
                             <li className={cx('main')}>
-                                <Link onClick={() => setShowTable(!showTable)}>Table</Link>
+                                <Link onClick={() => setShowTable(!showTable)}>Accounts</Link>
                                 {showTable && (
                                     <ul className={cx('dropdown')}>
                                         <li className={cx('sub')}>
-                                            <Link to="/admin/table/list">Table list</Link>
+                                            <Link to="/admin/accounts/list">Accounts list</Link>
                                         </li>
                                         <li className={cx('sub')}>
-                                            <Link to="/admin/table/create">Create a new table</Link>
+                                            <Link to="/admin/accounts/create">Create a new account</Link>
                                         </li>
                                     </ul>
                                 )}

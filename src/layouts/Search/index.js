@@ -18,7 +18,7 @@ function Search() {
     const [showResult, setShowResult] = useState(true);
     const [loading, setLoading] = useState(false);
 
-    // Fix api call multiple times 
+    // Fix api call multiple times
     const debounced = useDebounce(searchValue, 800);
 
     const inputRef = useRef(); // get DOM element
@@ -30,20 +30,20 @@ function Search() {
     };
 
     useEffect(() => {
-        if(!debounced.trim()) {
+        if (!debounced.trim()) {
             setSearchResult([]);
             return;
         }
         setLoading(true);
         api.get(`/clubs/search?name=${encodeURIComponent(debounced)}&type=less`)
-            .then (response => {
+            .then((response) => {
                 setSearchResult(response.data);
                 setLoading(false);
             })
-            .catch(error => {
-                console.log("Error: ", error);
+            .catch((error) => {
+                console.log('Error: ', error);
                 setLoading(false);
-            })
+            });
     }, [debounced]);
 
     const handleHideResult = () => {
@@ -59,8 +59,8 @@ function Search() {
                 <div className={cx('search-result')} tabIndex="-1" {...attrs}>
                     <PopperWrapper>
                         <h4 className={cx('search-title')}>Clubs</h4>
-                        {searchResult.map(result => (
-                            <Club key={result._id} data={result}/>
+                        {searchResult.map((result) => (
+                            <Club key={result._id} data={result} />
                         ))}
                     </PopperWrapper>
                 </div>
@@ -72,8 +72,8 @@ function Search() {
                     value={searchValue}
                     placeholder="Search..."
                     spellCheck={false}
-                    onChange={(e) => setSearchValue(e.target.value)} // input value = user input value
-                    onFocus={() => setShowResult(true)} // focus input show search result
+                    onChange={(e) => setSearchValue(e.target.value)}
+                    onFocus={() => setShowResult(true)}
                 />
                 {!!searchValue && !loading && (
                     <button className={cx('clear')} onClick={handleClear}>
